@@ -1,0 +1,9 @@
+.env
+*.log 
+logs/
+.DS_Store 
+Thumbs.db
+.vscode/
+/client/node_modules
+/server/node_modules
+
