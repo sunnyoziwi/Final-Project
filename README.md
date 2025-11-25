@@ -5,8 +5,8 @@ Dự án phát triển ứng dụng web Client-Server để ghi lại và tải 
 ## 🛠️ Kiến Trúc và Luồng Hoạt động
 
 **Kiến trúc:** Client-Server.
-* **Frontend:** [Python].
-* **Backend:** [Python, HTML, Javascript].
+* **Frontend:** [Python(Flask/Django)].
+* **Backend:** [Python, JS/HTML/CSS].
 
 **Luồng Giao tiếp Mạng Cốt lõi:**
 1.  Client (trình duyệt) gửi yêu cầu API đến Server qua HTTP/HTTPS.
