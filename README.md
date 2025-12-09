@@ -102,3 +102,4 @@ The system includes a component for the **Speech-to-Text (STT)** feature.
 * **Functionality:** Generates a text transcript for each question.
 * **Deliverable:** `transcript.txt`.
 * **Requirement:** The transcript must be **labeled per question** to link it to the corresponding video segment.
+  
