@@ -8,7 +8,7 @@ A secure and reliable client-server application for remote, structured interview
 
 This project implements a secure and reliable client-server application for conducting remote, structured interviews. The core feature is the **per-question upload mechanism**. This design choice directly addresses the primary challenge of network instability by minimizing potential data loss—if a network error occurs, only the current question's video is at risk, not the entire session. The system serves as a practical exercise in applying computer networking principles over **HTTP/HTTPS communication**.
 
----
+-----
 
 ## 2. 🏛️ System Architecture and Networking
 
