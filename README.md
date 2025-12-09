@@ -13,6 +13,12 @@ This project implements a secure and reliable client-server application for cond
 
 The core technical feature is the per-question upload mechanism. This design directly mitigates the primary challenge of network instability by isolating data risk—if an error occurs, only the current question's video segment is jeopardized, not the entire session. The system operates over **HTTP/HTTPS**.
 
+### 1.1. Key Technical Objectives
+The project addresses the following learning objectives:
+* Utilizing the **Media Devices.getUserMedia** API for camera/microphone access.
+* Designing a sequential UI for a maximum of **5 questions**.
+* Managing the session using the four mandatory API endpoints: **verify-token**, **session/start**, **upload-one**, and **session/finish**.
+* Implementing network error handling via retry with exponential backoff.
 
 -----
 
@@ -70,7 +76,7 @@ The following four APIs form the backbone of the client-server communication:
 
 The system is engineered to handle network instability by implementing a dedicated retry mechanism for the most critical action: `/api/upload-one`.
 
-* **Mechanism:** **Retry with Exponential Backoff**.
+* **Mechanism:** Retry with **Exponential Backoff** must be implemented for the **/api/upload-one call**.
 * **Requirement:** Must attempt to retry the upload at least **two to three times**.
 * **User Feedback:** The client must clearly display the status (`uploading`, `retry`, `success`) and provide a **manual Retry button**.
 
