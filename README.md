@@ -1,6 +1,7 @@
 # 🎤 Project: Web Interview Recorder (Per-Question Upload)
 
-A secure and reliable client-server application for remote, structured interviews. Developed by a team of four students over five weeks, the application's core feature is the **per-question upload mechanism**. This design choice directly addresses the primary challenge of network instability by minimizing potential data loss.
+
+This project implements a secure and reliable client-server application for conducting structured, remote interviews. Developed by a team over five weeks, the application is a practical exercise in Network and Communication Technology principles.
 
 ---
 
