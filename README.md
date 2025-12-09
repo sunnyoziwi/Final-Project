@@ -81,13 +81,11 @@ The system is engineered to handle network instability by implementing a dedicat
 
 ### 5.1. Run Instructions
 
-***[Lưu ý: Thay thế các đoạn văn bản trong ngoặc vuông bằng lệnh thực tế của nhóm bạn.]***
-
 1.  **Prerequisites:** [Specify required runtime environments, e.g., **Node.js v18+, Docker**].
 2.  **Clone:** `git clone [[repository-link](https://github.com/sunnyoziwi/Final-Project.git)]`
 3.  **Install Dependencies:**
     ```bash
-    npm install --prefix client && npm install --prefix server
+    npm install --prefix client && npm install --prefix server.
     ```
 4.  **Configuration:** Configure environment variables (e.g., `.env` files) for the server, including API keys and token lists.
 5.  **Start Services:**
