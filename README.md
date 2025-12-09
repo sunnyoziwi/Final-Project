@@ -1,12 +1,18 @@
 # 🎤 Project: Web Interview Recorder (Per-Question Upload)
 
-his project implements a secure and reliable client-server application for conducting remote, structured interviews. Developed by a team of four students over five weeks, the application's core feature is the per-question upload mechanism. This design choice directly addresses the primary challenge of network instability by minimizing potential data loss—if a network error occurs, only the current question's video is at risk, not the entire session. The system serves as a practical exercise in applying computer networking principles over HTTP/HTTPS communication.
+## Introduction
+
+
+This project implements a secure and reliable client-server application for conducting remote, structured interviews. Developed by a team of four students over five weeks, the application's core feature is the per-question upload mechanism. This design choice directly addresses the primary challenge of network instability by minimizing potential data loss—if a network error occurs, only the current question's video is at risk, not the entire session. The system serves as a practical exercise in applying computer networking principles over HTTP/HTTPS communication.
 
 ---
 
 ## 1. 📝 Project Overview
 
-This project implements a secure and reliable client-server application for conducting remote, structured interviews. The core feature is the **per-question upload mechanism**. This design choice directly addresses the primary challenge of network instability by minimizing potential data loss—if a network error occurs, only the current question's video is at risk, not the entire session. The system serves as a practical exercise in applying computer networking principles over **HTTP/HTTPS communication**.
+This project implements a secure and reliable client-server application for conducting structured, remote interviews. Developed by a team over five weeks, the application is a practical exercise in Network and Communication Technology principles.
+
+The core technical feature is the per-question upload mechanism. This design directly mitigates the primary challenge of network instability by isolating data risk—if an error occurs, only the current question's video segment is jeopardized, not the entire session. The system operates over **HTTP/HTTPS**.
+
 
 -----
 
