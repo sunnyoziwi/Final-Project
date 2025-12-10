@@ -68,7 +68,8 @@ The following four APIs form the backbone of the client-server communication:
 * **File Naming:** Video files are named sequentially (`Q1.webm`, `Q2.webm`, etc.).
 * **Metadata (`meta.json`):** This file is updated after each `upload-one` and **finalized at** `session/finish`. It must include critical information for auditing: `userName`, `uploadedAt` (ISO 8601), `timeZone`, and the `list of received questions`.
 
----
+-------
+
 
 ## 4. 🛡️ Reliability and Error Handling
 
