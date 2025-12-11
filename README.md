@@ -115,7 +115,7 @@ The system is engineered to handle network instability by implementing a dedicat
       **terminal 3
       cd client 
       .\ngrok http 5000**
-6.  **Access:** Navigate to **[Client URL]**. We recommend using `https://localhost` during development, or a service like **Ngrok** for testing public HTTPS requirements.
+6.  **Access: We recommend using `https://localhost` during development, or a service like **Ngrok** for testing public HTTPS requirements.
 
 ### 5.2. Bonus Feature (Optional)
 
