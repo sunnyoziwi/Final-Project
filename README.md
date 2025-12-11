@@ -7,7 +7,7 @@ This project implements a secure and reliable client-server application for cond
 
 ---
 
-## 1. 📝 Project Overview
+## 1. Project Overview
 
 This project implements a secure and reliable client-server application for conducting structured, remote interviews. Developed by a team over five weeks, the application is a practical exercise in Network and Communication Technology principles.
 
@@ -22,7 +22,7 @@ The project addresses the following learning objectives:
 
 -----
 
-## 2. 🏛️ System Architecture and Networking
+## 2. System Architecture and Networking
 
 ### 2.1. Client-Server Architecture
 
@@ -48,7 +48,7 @@ The operational flow is strictly sequential and relies on explicit API calls for
 
 ---
 
-## 3. 🤝 API Contract and Data Handling
+## 3. API Contract and Data Handling
 
 ### 3.1. Required API Endpoints
 
@@ -71,7 +71,7 @@ The following four APIs form the backbone of the client-server communication:
 -------
 
 
-## 4. 🛡️ Reliability and Error Handling
+## 4. Reliability and Error Handling
 
 ### 4.1. Network Retry Policy
 
@@ -90,7 +90,7 @@ The system is engineered to handle network instability by implementing a dedicat
 
 ---
 
-## 5. 🚀 Implementation and Deployment
+## 5. Implementation and Deployment
 
 ### 5.1. Run Instructions
 
