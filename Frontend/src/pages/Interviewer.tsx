@@ -1,0 +1,164 @@
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+
+interface Position {
+  id: string;
+  title: string;
+  questions: string[];
+}
+
+export const Interviewer = ({ userName }: { userName: string }) => {
+  const [positions, setPositions] = useState<Position[]>([]);
+  const [selectedPosId, setSelectedPosId] = useState<string | null>(null);
+  const [editingQuestions, setEditingQuestions] = useState<string[]>([]);
+  const [isSaving, setIsSaving] = useState(false);
+
+  useEffect(() => {
+    fetchPositions();
+  }, []);
+
+  const fetchPositions = () => {
+    axios.get('/api/positions')
+      .then(res => {
+        setPositions(res.data);
+        if (!selectedPosId && res.data.length > 0) {
+           handleSelectPos(res.data[0]);
+        }
+      })
+      .catch(console.error);
+  };
+
+  const handleSelectPos = (pos: Position) => {
+    setSelectedPosId(pos.id);
+    setEditingQuestions([...pos.questions]);
+  };
+
+  const handleQuestionChange = (index: number, value: string) => {
+    const newQ = [...editingQuestions];
+    newQ[index] = value;
+    setEditingQuestions(newQ);
+  };
+
+  const handleSave = async () => {
+    if (!selectedPosId) return;
+    setIsSaving(true);
+    try {
+      await axios.post('/api/positions/update', {
+        id: selectedPosId,
+        questions: editingQuestions
+      });
+      alert(" Question saved successfully!");
+      
+
+      setPositions(prev => prev.map(p => 
+        p.id === selectedPosId ? { ...p, questions: editingQuestions } : p
+      ));
+    } catch (error) {
+      alert("Saving Error!");
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
+  const handleAddPosition = async () => {
+    const title = prompt("Input new position:");
+    if (!title || !title.trim()) return;
+
+    try {
+      const res = await axios.post('/api/positions/add', { title });
+      if (res.data.success) {
+        const newPos = res.data.newPosition;
+        setPositions([...positions, newPos]);
+        handleSelectPos(newPos);
+      }
+    } catch (error) {
+      alert("Editing error");
+    }
+  };
+
+  return (
+    <div className="interviewer-container">
+      <h2 style={{borderBottom: '1px solid #ddd', paddingBottom: '15px'}}>
+         Interview questions editing - Hello {userName}
+      </h2>
+
+      <div style={{display: 'flex', gap: '30px', marginTop: '20px'}}>
+
+        <div style={{width: '300px', borderRight: '1px solid #eee', paddingRight: '20px', display: 'flex', flexDirection: 'column'}}>
+          <h3 style={{color: '#555'}}>Positions</h3>
+          <div className="pos-list" style={{flex: 1, overflowY: 'auto'}}>
+            {positions.map(pos => (
+              <div 
+                key={pos.id}
+                onClick={() => handleSelectPos(pos)}
+                style={{
+                  padding: '15px',
+                  marginBottom: '10px',
+                  borderRadius: '8px',
+                  cursor: 'pointer',
+                  background: selectedPosId === pos.id ? '#e3f2fd' : '#fff',
+                  border: selectedPosId === pos.id ? '2px solid #2196f3' : '1px solid #ddd',
+                  fontWeight: selectedPosId === pos.id ? 'bold' : 'normal'
+                }}
+              >
+                {pos.title}
+              </div>
+            ))}
+          </div>
+
+          <button 
+            onClick={handleAddPosition}
+            style={{
+              marginTop: '10px',
+              padding: '12px',
+              background: '#4caf50',
+              color: 'white',
+              border: 'none',
+              borderRadius: '8px',
+              cursor: 'pointer',
+              fontWeight: 'bold',
+              display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '5px'
+            }}
+          >
+            <span>➕</span> Adding position
+          </button>
+        </div>
+
+        <div style={{flex: 1}}>
+          {selectedPosId ? (
+            <>
+              <h3 style={{color: '#2196f3'}}> Question set for: {positions.find(p => p.id === selectedPosId)?.title}</h3>
+              <p style={{fontStyle: 'italic', color: '#666', marginBottom: '20px'}}>
+                Enter questions below. Candidate choose the position will answer question in order.
+              </p>
+              
+              {editingQuestions.map((q, idx) => (
+                <div key={idx} style={{marginBottom: '15px'}}>
+                  <label style={{display: 'block', marginBottom: '5px', fontWeight: 'bold'}}>Question {idx + 1}:</label>
+                  <input 
+                    type="text"
+                    className="question-edit-input" 
+                    value={q}
+                    onChange={(e) => handleQuestionChange(idx, e.target.value)}
+                    placeholder={`Enter question No ${idx + 1}`}
+                  />
+                </div>
+              ))}
+
+              <button 
+                onClick={handleSave}
+                disabled={isSaving}
+                className="btn-primary-gradient"
+                style={{marginTop: '20px', width: '200px'}}
+              >
+                {isSaving ? "Saving..." : " Saved"}
+              </button>
+            </>
+          ) : (
+             <p>Loading...</p>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
