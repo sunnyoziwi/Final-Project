@@ -3,6 +3,9 @@
   box-sizing: border-box;
 }
 
+
+
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -637,4 +640,5 @@ body {
 .question-edit-input:focus {
   border-color: #2196f3;
   outline: none;
+
 }
