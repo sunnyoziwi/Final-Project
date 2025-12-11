@@ -102,8 +102,19 @@ The system is engineered to handle network instability by implementing a dedicat
     ```
 4.  **Configuration:** Configure environment variables (e.g., `.env` files) for the server, including API keys and token lists.
 5.  **Start Services:**
-    * **Backend:** `npm run start:server`
-    * **Frontend:** `npm run start:client`
+    **terminal 1 
+      cd client 
+      npm install 
+      npm run build**
+
+      **terminal 2
+      cd sercer
+      npm insrall
+      npm start**
+
+      **terminal 3
+      cd client 
+      .\ngrok http 5000**
 6.  **Access:** Navigate to **[Client URL]**. We recommend using `https://localhost` during development, or a service like **Ngrok** for testing public HTTPS requirements.
 
 ### 5.2. Bonus Feature (Optional)
