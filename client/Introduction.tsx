@@ -14,7 +14,6 @@ export const Introduction = ({ onStart }: IntroProps) => {
   const [role, setRole] = useState<'interviewer' | 'interviewee'>('interviewee');
   const [language, setLanguage] = useState('vi-VN');
   
-  // 🔥 State mới cho mật khẩu
   const [password, setPassword] = useState('');
 
   const [showModal, setShowModal] = useState(false);
@@ -34,7 +33,6 @@ export const Introduction = ({ onStart }: IntroProps) => {
       return;
     }
 
-    // 🔥 LOGIC CHECK PASSKEY GIÁM KHẢO
     if (role === 'interviewer') {
       if (password !== '1587') {
         alert("❌ Mật khẩu giám khảo không đúng!");
@@ -42,7 +40,6 @@ export const Introduction = ({ onStart }: IntroProps) => {
       }
       onStart({ name, role, language });
     } else {
-      // Logic Ứng viên giữ nguyên
       setShowModal(true);
     }
   };
@@ -80,8 +77,7 @@ export const Introduction = ({ onStart }: IntroProps) => {
                 <option value="interviewer">👩‍💼 Giám khảo (Setup)</option>
              </select>
           </div>
-
-          {/* 🔥 CHỈ HIỆN Ô PASSKEY NẾU LÀ GIÁM KHẢO */}
+          
           {role === 'interviewer' && (
             <div className="input-group">
               <label style={{color: '#d32f2f'}}>🔑 Mật khẩu quản trị</label>
