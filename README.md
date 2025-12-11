@@ -96,12 +96,13 @@ The system is engineered to handle network instability by implementing a dedicat
 
 1.  **Prerequisites:** [Specify required runtime environments, e.g., **Node.js v18+, Docker**].
 2.  **Clone:** `git clone [[repository-link](https://github.com/sunnyoziwi/Final-Project.git)]`
-3.  **Install Dependencies:**
+3.  Install Ngrok: go to **https://ngrok.com/download/windows**, navigate the download and setup in client folder 
+4.  **Install Dependencies:**
     ```bash
     npm install --prefix client && npm install --prefix server.
     ```
-4.  **Configuration:** Configure environment variables (e.g., `.env` files) for the server, including API keys and token lists.
-5.  **Start Services:**
+5.  **Configuration:** Configure environment variables (e.g., `.env` files) for the server, including API keys and token lists.
+6.  **Start Services:**
     **terminal 1 
       cd client 
       npm install 
@@ -115,7 +116,7 @@ The system is engineered to handle network instability by implementing a dedicat
       **terminal 3
       cd client 
       .\ngrok http 5000**
-6.  **Access:** Navigate to **[Client URL]**. We recommend using `https://localhost` during development, or a service like **Ngrok** for testing public HTTPS requirements.
+7.  **Access:**. We recommend using `https://localhost` during development, or a service like **Ngrok** for testing public HTTPS requirements.
 
 ### 5.2. Bonus Feature (Optional)
 
@@ -124,4 +125,6 @@ The system includes a component for the **Speech-to-Text (STT)** feature.
 * **Functionality:** Generates a text transcript for each question.
 * **Deliverable:** `transcript.txt`.
 * **Requirement:** The transcript must be **labeled per question** to link it to the corresponding video segment.
+
+
   
