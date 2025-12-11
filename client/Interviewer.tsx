@@ -13,7 +13,6 @@ export const Interviewer = ({ userName }: { userName: string }) => {
   const [editingQuestions, setEditingQuestions] = useState<string[]>([]);
   const [isSaving, setIsSaving] = useState(false);
 
-  // Load danh sách vị trí
   useEffect(() => {
     fetchPositions();
   }, []);
@@ -50,8 +49,7 @@ export const Interviewer = ({ userName }: { userName: string }) => {
         questions: editingQuestions
       });
       alert("✅ Đã lưu bộ câu hỏi thành công!");
-      
-      // Update state local để khỏi fetch lại
+
       setPositions(prev => prev.map(p => 
         p.id === selectedPosId ? { ...p, questions: editingQuestions } : p
       ));
@@ -62,7 +60,7 @@ export const Interviewer = ({ userName }: { userName: string }) => {
     }
   };
 
-  // 🔥 HÀM MỚI: Thêm vị trí
+
   const handleAddPosition = async () => {
     const title = prompt("Nhập tên vị trí tuyển dụng mới:");
     if (!title || !title.trim()) return;
@@ -142,7 +140,7 @@ export const Interviewer = ({ userName }: { userName: string }) => {
                   <label style={{display: 'block', marginBottom: '5px', fontWeight: 'bold'}}>Câu {idx + 1}:</label>
                   <input 
                     type="text"
-                    className="question-edit-input" // Class bạn đã thêm ở CSS
+                    className="question-edit-input" 
                     value={q}
                     onChange={(e) => handleQuestionChange(idx, e.target.value)}
                     placeholder={`Nhập nội dung câu hỏi số ${idx + 1}`}

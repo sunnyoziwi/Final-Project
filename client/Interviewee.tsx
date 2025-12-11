@@ -18,15 +18,13 @@ interface RoomProps {
 export const Interviewee = ({ userName, userEmail, language, positionData, onFinish }: RoomProps) => {
   const { mediaStream, isRecording, initCamera, startRecording, stopRecording, shutdownCamera } = useMediaRecorder();
   const { transcript, startListening, stopListening } = useSpeechToText(language);
-  
-  // ✅ Sử dụng bộ câu hỏi động từ props (Không dùng list cứng nữa)
+
   const questionsList = positionData?.questions || ["Đang tải câu hỏi..."];
 
   const [questionIndex, setQuestionIndex] = useState(0);
   const [isUploading, setIsUploading] = useState(false);
   const [customQuestion, setCustomQuestion] = useState("");
   
-  // Logic PeerJS giữ nguyên để ghi hình, nhưng ẩn giao diện ID
   const peerInstance = useRef<Peer | null>(null);
   const transcriptRef = useRef(''); 
 
@@ -52,7 +50,6 @@ export const Interviewee = ({ userName, userEmail, language, positionData, onFin
     
     peerInstance.current = peer;
 
-    // Vẫn kết nối ngầm để Server nhận diện, nhưng không hiện lên màn hình
     const sendMyId = (id: string) => {
       socket.emit("join_room", userEmail);
       socket.emit("send_peer_id", { peerId: id, userEmail });
@@ -116,7 +113,7 @@ export const Interviewee = ({ userName, userEmail, language, positionData, onFin
 
   return (
     <div className="room-container">
-       {/* ✅ Chỉ giữ lại Tên vị trí và Câu hỏi động */}
+       {/* Chỉ giữ lại Tên vị trí và Câu hỏi động */}
        <h3 style={{color: '#007bff', marginBottom: '30px', textTransform: 'uppercase', letterSpacing: '1px'}}>
          Vị trí: {positionData?.title}
        </h3>
