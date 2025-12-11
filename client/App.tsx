@@ -8,18 +8,16 @@ import { SubmitSuccess } from './pages/SubmitSuccess';
 function App() {
   const navigate = useNavigate();
 
-  // 1. Khởi tạo state từ localStorage
+
   const [userData, setUserData] = useState(() => {
     const saved = localStorage.getItem('interviewApp_User');
     return saved ? JSON.parse(saved) : { name: '', email: '', role: '', lang: 'vi-VN', position: null };
   });
 
-  // 2. Lưu localStorage mỗi khi userData đổi
   useEffect(() => {
     localStorage.setItem('interviewApp_User', JSON.stringify(userData));
   }, [userData]);
 
-  // 3. Xử lý khi bấm nút "Bắt đầu" ở màn hình Intro
   const handleStart = (data: any) => {
     const safeName = data.name.toLowerCase().replace(/ /g, '_');
     // Fake email nếu không có
@@ -35,7 +33,6 @@ function App() {
 
     setUserData(newUserData);
 
-    // Điều hướng
     if (data.role === 'interviewer') {
       navigate('/interviewer');
     } else {
@@ -46,10 +43,6 @@ function App() {
   const handleFinish = () => {
     navigate('/success');
   };
-
-  // ❌ Đã xóa handleReset (thừa)
-  // ❌ Đã xóa useEffect bảo vệ route (thừa vì đã xử lý ở dưới)
-
   return (
     <div className="App">
       <Routes>
