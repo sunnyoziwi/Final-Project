@@ -96,7 +96,7 @@ The system is engineered to handle network instability by implementing a dedicat
 
 1.  **Prerequisites:** [Specify required runtime environments, e.g., **Node.js v18+, Docker**].
 2.  **Clone:** `git clone [[repository-link](https://github.com/sunnyoziwi/Final-Project.git)]`
-3.  Install Ngrok: go to **https://ngrok.com/download/windows**, navigate the download and setup in client folder 
+3.  **Install Ngrok:** Go to **https://ngrok.com/download/windows**, navigate the download and setup in client folder 
 4.  **Install Dependencies:**
     ```bash
     npm install --prefix client && npm install --prefix server.
