@@ -81,7 +81,7 @@ body {
   max-width: 800px;
   padding: 50px;
   border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); /* Bóng đổ mềm mại */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); 
   border: 1px solid #ffffff;
 }
 
@@ -105,7 +105,7 @@ body {
 
 .intro-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 cột */
+  grid-template-columns: 1fr 1fr; 
   gap: 30px;
   margin-bottom: 40px;
 }
@@ -434,7 +434,7 @@ body {
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   border: 1px solid #e1e4e8;
-  z-index: 1000; /* Luôn nổi lên trên cùng */
+  z-index: 1000; 
 }
 
 .lang-option {
@@ -461,7 +461,6 @@ body {
   color: #999;
 }
 
-/* --- Page: Waiting --- */
 .waiting-container {
   text-align: center;
   padding: 100px 20px;
@@ -483,12 +482,12 @@ body {
 
 .waiting-status {
   font-size: 1.1rem;
-  color: #007bff; /* Màu xanh hy vọng */
+  color: #007bff; 
   font-weight: bold;
-  animation: blink 2s infinite; /* Chữ nhấp nháy nhẹ */
+  animation: blink 2s infinite; 
 }
 
-/* Vòng tròn xoay (Spinner) */
+
 .spinner {
   border: 8px solid #f3f3f3;
   border-top: 8px solid #007bff;
@@ -496,29 +495,26 @@ body {
   width: 60px;
   height: 60px;
   animation: spin 1s linear infinite;
-  margin: 0 auto 30px auto; /* Canh giữa */
+  margin: 0 auto 30px auto; 
 }
 
-/* Hiệu ứng xoay */
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
 
-/* Hiệu ứng nhấp nháy chữ */
 @keyframes blink {
   0% { opacity: 1; }
   50% { opacity: 0.5; }
   100% { opacity: 1; }
 }
 
-/* --- Page: Watching (Monitoring Dashboard) --- */
 .watching-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
   min-height: 100vh;
-  background-color: #f0f2f5; /* Nền tổng thể sáng */
+  background-color: #f0f2f5;
 }
 
 .watching-header {
@@ -526,16 +522,16 @@ body {
   color: #333;
 }
 
-/* Lưới hiển thị 2 cột hàng trên */
+
 .monitor-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr; /* Camera chiếm 2 phần, Transcript chiếm 1 phần */
+  grid-template-columns: 2fr 1fr; 
   gap: 20px;
-  height: 500px; /* Chiều cao cố định cho khu vực này */
+  height: 500px; 
   margin-bottom: 20px;
 }
 
-/* Khối Camera (Đen) */
+
 .cam-feed-box {
   background-color: #000;
   border-radius: 12px;
@@ -552,7 +548,6 @@ body {
   color: #888;
 }
 
-/* Khối Transcript (Xám đậm hoặc Đen) */
 .transcript-feed-box {
   background-color: #1a1a1a;
   border-radius: 12px;
@@ -573,7 +568,7 @@ body {
 
 .transcript-content {
   flex: 1;
-  overflow-y: auto; /* Cho phép cuộn nếu chữ dài */
+  overflow-y: auto; 
   margin-top: 10px;
   font-family: monospace;
 }
@@ -584,9 +579,8 @@ body {
   font-size: 14px;
 }
 
-/* Khối Câu hỏi (Hàng dưới) */
 .control-panel-box {
-  background-color: #2c3e50; /* Màu xanh đen chuyên nghiệp */
+  background-color: #2c3e50; 
   padding: 30px;
   border-radius: 12px;
   color: #fff;
