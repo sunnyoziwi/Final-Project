@@ -1,4 +1,4 @@
-# 🎤 Project: Web Interview Recorder (Per-Question Upload)
+#  Project: Web Interview Recorder (Per-Question Upload)
 
 ## Introduction
 
