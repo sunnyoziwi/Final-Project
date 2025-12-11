@@ -1,0 +1,10 @@
+version: "2"
+authtoken: 360FO53eJjlgLSpZ3l3ShxyXbMy_2MqD4eHLqsCgndezeJ7qR
+tunnels:
+  client:
+    addr: 3000
+    proto: http
+  server:
+    addr: 5000
+    proto: http
+    domain: overfrugally-putrescent-natashia.ngrok-free.dev
