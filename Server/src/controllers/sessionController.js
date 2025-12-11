@@ -85,7 +85,7 @@ exports.startSession = (req, res) => {
   }
 
   global.activeSessions[userName] = folderPath;
-  console.log(`✅ Session started: ${userName} -> ${folderName}`);
+  console.log(` Session started: ${userName} -> ${folderName}`);
   
   res.json({ success: true, folder: folderName });
 };
@@ -95,7 +95,7 @@ exports.finishSession = (req, res) => {
   if (global.activeSessions[userName]) {
     delete global.activeSessions[userName];
   }
-  console.log(`🏁 Session finished: ${userName}`);
+  console.log(` Session finished: ${userName}`);
   res.json({ success: true });
 };
 
@@ -121,4 +121,5 @@ exports.joinWaiting = (req, res) => {
 
 exports.getWaitingList = (req, res) => {
   res.json({ candidates: global.waitingList });
+
 };
