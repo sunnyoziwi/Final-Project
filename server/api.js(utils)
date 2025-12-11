@@ -12,6 +12,6 @@ router.post('/positions/update', sessionController.updatePosition);
 
 router.post('/positions/add', sessionController.addPosition);
 router.post('/upload-one', uploadController.uploadMiddleware, uploadController.handleUpload);
-router.post('/waiting/join', sessionController.joinWaiting); // Thí sinh vào
-router.get('/waiting/list', sessionController.getWaitingList); // Giám khảo xem
+router.post('/waiting/join', sessionController.joinWaiting);
+router.get('/waiting/list', sessionController.getWaitingList);
 module.exports = router;
