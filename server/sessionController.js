@@ -43,7 +43,7 @@ exports.addPosition = (req, res) => {
   if (!title) return res.status(400).json({ error: "Thiếu tên vị trí" });
 
   const newPos = {
-    id: `pos_${Date.now()}`, // Tạo ID ngẫu nhiên
+    id: `pos_${Date.now()}`,
     title: title,
     questions: [
       "Câu hỏi 1...", 
@@ -51,7 +51,7 @@ exports.addPosition = (req, res) => {
       "Câu hỏi 3...", 
       "Câu hỏi 4...", 
       "Câu hỏi 5..."
-    ] // Tạo sẵn 5 câu mẫu
+    ] 
   };
 
   global.positions.push(newPos);
@@ -104,11 +104,9 @@ exports.verifyToken = (req, res) => {
 };
 exports.joinWaiting = (req, res) => {
   const { name, email } = req.body;
-  
-  // Kiểm tra xem đã có trong danh sách chưa (tránh trùng lặp)
+
   const exists = global.waitingList.find(c => c.email === email);
   if (!exists) {
-    // Tạo ID ngẫu nhiên cho thí sinh
     const newCandidate = { 
       id: Date.now(), 
       name, 
